@@ -5,8 +5,8 @@ class PostFixEvaluation:
     def __init__(self):
         self.s = Stack(20)
 
-    def evaluate(self, exp):
-        for e in exp:
+    def evaluate(self, expression):
+        for e in expression:
             if e.isdigit():
                 self.s.push(e)
             elif e.isalpha():
