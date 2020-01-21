@@ -1,6 +1,7 @@
 # Simple stack implementation
 import sys
 
+
 class EmptyStackError(Exception):
     def __init__(self):
         super().__init__("OOPs Stack is empty: cannot pop an empty stack")
@@ -11,20 +12,20 @@ class StackFullError(Exception):
         super().__init__("OOPs Stack is full")
 
 
-class Stack():
-    def __init__(self,maxsize):
+class Stack:
+    def __init__(self, maxsize):
         self.maxsize = maxsize
         self.items = []
 
     def isEmpty(self):
-        if (len(self.items)==0):
+        if len(self.items) == 0:
             return True
 
         else:
             return False
 
     def isFull(self):
-        if (len(self.items)==self.maxsize):
+        if len(self.items) == self.maxsize:
             return True
 
         else:
@@ -37,18 +38,17 @@ class Stack():
         self.items.append(data)
         return data
 
-    
     def pop(self):
         if self.isEmpty():
             raise EmptyStackError()
 
-        item = self.items[len(self.items)-1]
-        del self.items[len(self.items)-1]
+        item = self.items[len(self.items) - 1]
+        del self.items[len(self.items) - 1]
         print(f'Top element {item} is deleted')
         return item
 
     def top_element(self):
-        top = self.items[len(self.items)-1]
+        top = self.items[len(self.items) - 1]
         print(f'Top element of the stack is {top}')
         return top
 
@@ -58,20 +58,18 @@ class Stack():
             print(item)
 
 
-
 # Menu
 
 class Menu:
     def __init__(self):
         self.stack = Stack(max1)
         self.choices = {
-            "1":self.push,
-            "2":self.pop,
-            "3":self.top,
-            "4":self.all,
-            "5":self.quit
+            "1": self.push,
+            "2": self.pop,
+            "3": self.top,
+            "4": self.all,
+            "5": self.quit
         }
-
 
     def display(self):
         print("""
@@ -82,7 +80,6 @@ class Menu:
         4. To see all elements in a stack,
         5. To exit
         """)
-
 
     def run(self):
         while True:
@@ -96,13 +93,12 @@ class Menu:
             else:
                 print("Not a valid input")
 
-    
     def push(self):
         i = 0
         while (i < int(max1)):
             data = input("Enter the element to push:")
             self.stack.push(data)
-            i+=1
+            i += 1
 
     def pop(self):
         self.stack.pop()
@@ -117,15 +113,6 @@ class Menu:
         sys.exit(1)
 
 
-    
-
-
-
 if __name__ == "__main__":
     max1 = input("Ente the size of stack:")
     Menu().run()
-
-
-
-
-    
