@@ -1,22 +1,28 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
+void swapp(int *xp, int *yp) 
+{ 
+    int temp = *xp; 
+    *xp = *yp; 
+    *yp = temp; 
+} 
+
 void selectionSort(int ptr[], int n)
 {
-    int i, j,temp, pos;
+    int i, j, min_idx, temp;
     for (i=0;i<n-1;i++)
     {
-        pos = i;
+        min_idx = i;
         for (j=i+1;j<n;j++)
         {
-            if (ptr[pos] > ptr[j])
+            if (ptr[j]<ptr[min_idx])
             {
-                pos = j;
+                min_idx = j;
             }
         }
-        temp = ptr[pos];
-        ptr[pos] = ptr[i];
-        ptr[i] = temp;
+       swapp(&ptr[min_idx], &ptr[i]);
         
         
             
