@@ -1,4 +1,4 @@
-
+from playsound import playsound
 class Sort:
     def __init__(self):
         self.temp = 0
@@ -6,6 +6,7 @@ class Sort:
 
     def swap(self, i, j, items):
         print(items)
+        #playsound('pop.wav')
         if i != j:
             items[i], items[j] = items[j], items[i]
 
