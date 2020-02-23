@@ -42,4 +42,19 @@ class Sort:
             self.swap(i, min_idx, items)
             yield items
 
+    def insertion_sort(self, items):
+         for i in range(1, len(items)):
+            temp = items[i]
+            j = i - 1
+            while ((temp < items[j] and j >= 0)):
+                items[j], items[j+1] = items[j+1], items[j]
+                j -= 1
+                print(items)
+                yield items
+
+          
+
+
+
+
 
