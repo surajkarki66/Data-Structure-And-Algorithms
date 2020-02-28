@@ -20,7 +20,10 @@ class Data:
    
 
     def random(self):
-        self.items = [x+1 for x in range(self.num)]
+        self.num = int(input("Enter how many number:"))
+        item = [x+1 for x in range(self.num)]
+        for i in item:
+            self.items.append(i)
         random.seed(time.time())
         random.shuffle(self.items)
 
@@ -50,7 +53,7 @@ class Data:
 
 if __name__ == "__main__":    
     data = Data()
-    data.get()
+    data.random()
     data.display()
     data.search()
     
