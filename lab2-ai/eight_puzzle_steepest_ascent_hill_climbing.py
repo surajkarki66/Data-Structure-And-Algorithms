@@ -205,8 +205,8 @@ initial = [[1, 2, 3],
 # Final configuration that can be solved
 # Value 0 is taken as an empty space
 final = [[1, 2, 3],
-         [4, 5, 6],
-         [7, 8, 0]]
+         [5, 8, 6],
+         [0, 7, 4]]
 
 # Blank tile coordinates in the
 # initial configuration
